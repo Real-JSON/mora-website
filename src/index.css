@@ -1,111 +1,171 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+@import "tailwindcss";
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+/* MŌRA — Global Design Foundation */
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* MŌRA — Tailwind Theme */
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+@theme {
+    /* Colours */
+    --color-ivory: #f2ebdd;
+    --color-espresso: #241711;
+    --color-caramel: #b87543;
+    --color-stone: #b9aa96;
+    --color-cocoa: #493126;
+    --color-cream: #faf7f0;
+
+    /* Typography */
+    --font-display: "Cormorant Garamond", serif;
+    --font-body: "Manrope", sans-serif;
+
+    /* Spacing */
+    --spacing-1: 4px;
+    --spacing-2: 8px;
+    --spacing-3: 12px;
+    --spacing-4: 16px;
+    --spacing-6: 24px;
+    --spacing-8: 32px;
+    --spacing-12: 48px;
+    --spacing-16: 64px;
+    --spacing-20: 80px;
+    --spacing-24: 96px;
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 12px;
+    --radius-lg: 24px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+/* 1. Design Tokens */
+:root {
+    /* Colours */
+    --color-ivory: #f2ebdd;
+    --color-espresso: #241711;
+    --color-caramel: #b87543;
+    --color-stone: #b9aa96;
+    --color-cocoa: #493126;
+    --color-cream: #faf7f0;
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+    /* Typography */
+    --font-display: "Cormorant Garamond", serif;
+    --font-body: "Manrope", sans-serif;
+
+    /* Layout */
+    --container-width: 1280px;
+    --page-padding: 80px;
+
+    /* Spacing */
+    --space-1: var(--spacing-1);
+    --space-2: var(--spacing-2);
+    --space-3: var(--spacing-3);
+    --space-4: var(--spacing-4);
+    --space-6: var(--spacing-6);
+    --space-8: var(--spacing-8);
+    --space-12: var(--spacing-12);
+    --space-16: var(--spacing-16);
+    --space-20: var(--spacing-20);
+    --space-24: var(--spacing-24);
+
+    /* Borders */
+    --radius-sm: 4px;
+    --radius-md: 12px;
+    --radius-lg: 24px;
+}
+
+/* 2. Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: var(--color-ivory);
+    color: var(--color-espresso);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+    min-height: 100vh;
 }
 
+/* 3. Typography */
 h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 500;
+    line-height: 1.1;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
 p {
-  margin: 0;
+    margin: 0;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+a {
+    text-decoration: none;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 4. Media */
+img,
+picture,
+video,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 5. Accessibility */
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* 6. Responsive Layout */
+@media (max-width: 768px) {
+    :root {
+        --page-padding: 24px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    :root {
+        --page-padding: 40px;
+    }
 }
