@@ -82,55 +82,55 @@ const Header = () => {
                     ORDER
                 </a>
             </nav>
-                <div
-                    id="mobile-navigation"
-                    aria-hidden={!isMenuOpen}
-                    inert={!isMenuOpen}
-                    className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out md:hidden ${
-                        isMenuOpen
-                            ? "grid-rows-[1fr] opacity-100"
-                            : "grid-rows-[0fr] opacity-0"
-                    }`}
-                >
-                    <div className="min-h-0 overflow-hidden">
-                        <nav
-                            aria-label="Mobile navigation"
-                            className="flex flex-col gap-8 border-t border-stone/40 bg-ivory px-6 py-8"
+            <div
+                id="mobile-navigation"
+                aria-hidden={!isMenuOpen}
+                inert={!isMenuOpen}
+                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out md:hidden ${
+                    isMenuOpen
+                        ? "grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0"
+                }`}
+            >
+                <div className="min-h-0 overflow-hidden">
+                    <nav
+                        aria-label="Mobile navigation"
+                        className="flex flex-col gap-8 border-t border-stone/40 bg-ivory px-6 py-8"
+                    >
+                        <a
+                            href="#discover"
+                            onClick={() => setIsMenuOpen(false)}
+                            className="font-body text-sm font-semibold tracking-[0.15em] transition-colors duration-300 hover:text-caramel"
                         >
-                            <a
-                                href="#discover"
-                                onClick={() => setIsMenuOpen(false)}
-                                className="font-body text-sm font-semibold tracking-[0.15em] transition-colors duration-300 hover:text-caramel"
-                            >
-                                DISCOVER
-                            </a>
+                            DISCOVER
+                        </a>
 
-                            <a
-                                href="#menu"
-                                onClick={() => setIsMenuOpen(false)}
-                                className="font-body text-sm font-semibold tracking-[0.15em] transition-colors duration-300 hover:text-caramel"
-                            >
-                                MENU
-                            </a>
+                        <a
+                            href="#menu"
+                            onClick={() => setIsMenuOpen(false)}
+                            className="font-body text-sm font-semibold tracking-[0.15em] transition-colors duration-300 hover:text-caramel"
+                        >
+                            MENU
+                        </a>
 
-                            <a
-                                href="#story"
-                                onClick={() => setIsMenuOpen(false)}
-                                className="font-body text-sm font-semibold tracking-[0.15em] transition-colors duration-300 hover:text-caramel"
-                            >
-                                OUR STORY
-                            </a>
+                        <a
+                            href="#story"
+                            onClick={() => setIsMenuOpen(false)}
+                            className="font-body text-sm font-semibold tracking-[0.15em] transition-colors duration-300 hover:text-caramel"
+                        >
+                            OUR STORY
+                        </a>
 
-                            <a
-                                href="#contact"
-                                onClick={() => setIsMenuOpen(false)}
-                                className="inline-flex w-fit border border-espresso px-7 py-3 font-body text-xs font-semibold tracking-[0.15em] transition-colors duration-300 hover:bg-espresso hover:text-ivory"
-                            >
-                                ORDER
-                            </a>
-                        </nav>
-                    </div>
+                        <a
+                            href="#contact"
+                            onClick={() => setIsMenuOpen(false)}
+                            className="inline-flex w-fit border border-espresso px-7 py-3 font-body text-xs font-semibold tracking-[0.15em] transition-colors duration-300 hover:bg-espresso hover:text-ivory"
+                        >
+                            ORDER
+                        </a>
+                    </nav>
                 </div>
+            </div>
         </header>
     );
 };
